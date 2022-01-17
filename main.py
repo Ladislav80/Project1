@@ -58,7 +58,7 @@ os.system("cls")
 
 print(f"Výborně vybral jste text č. {v}, teď se podíváme na nějaké statistiky:")
 vybrText = TEXTS[v-1]
-vyprText = vybrText.strip("()[],.!?/*-+")
+vyprText = vybrText.translate({ord(i): None for i in "()[],.!?/*-+"})
 word_list = vybrText.split()
 pocetSlov = len(word_list)
 pocetSlovZV = 0
