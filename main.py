@@ -1,6 +1,7 @@
 # projekt 1, Ladislav Lukavsky
 
 import sys, os
+import string
 
 
 j = input("Zadej své uživatelské jméno: \t")
@@ -58,8 +59,11 @@ os.system("cls")
 
 print(f"Výborně vybral jste text č. {v}, teď se podíváme na nějaké statistiky:")
 vybrText = TEXTS[v-1]
-vyprText = vybrText.translate({ord(i): None for i in "()[],.!?/*-+"})
+odstan = "()[],.!?/*-+"
+nahrad = " "
+vybrText = vybrText.translate({ord(i): nahrad for i in odstan})
 word_list = vybrText.split()
+print(word_list)
 pocetSlov = len(word_list)
 pocetSlovZV = 0
 pocetSlovV = 0
